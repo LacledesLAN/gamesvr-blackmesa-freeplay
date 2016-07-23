@@ -3,48 +3,30 @@
 	"1" 
 	{ 
 		"type"		"S" 
-		"text"		"{ORANGE}Next map change is in {TIMELEFT}." 
-		"flags"		"" 
+		"text"		"Current map:{CURRENTMAP}" 
 	} 
 	"2" 
 	{ 
 		"type"		"S" 
-		"text"		"{ORANGE}Current map: {DEFAULT}{CURRENTMAP}" 
-	} 
+		"text"		"Join our Steam group! http://steamcommunity.com/groups/lacledes_lan." 
+		"flags"		"" 
+	}		 
 	"3" 
 	{ 
 		"type"		"S" 
-		"text"		"{ORANGE}Join our Steam group! http://steamcommunity.com/groups/lacledes_lan." 
+		"text"		"We're on Twitter! Tweet us at @LacledesLAN." 
 		"flags"		"" 
-	}		 
+	}	 
 	"4" 
 	{ 
 		"type"		"S" 
-		"text"		"{ORANGE}Just say '!nominate' to nominate a map for voting." 
+		"text"		"If there are any problems feel free to talk to the staff at the admin table." 
 		"flags"		"" 
 	} 
 	"5" 
 	{ 
 		"type"		"S" 
-		"text"		"{ORANGE}Say '!rtv' in order to call for a mapvote." 
-		"flags"		"" 
-	} 
-	"6" 
-	{ 
-		"type"		"S" 
-		"text"		"{ORANGE}We're on Twitter! Tweet us at @LacledesLAN." 
-		"flags"		"" 
-	}	 
-	"7" 
-	{ 
-		"type"		"S" 
-		"text"		"{ORANGE}If there are any problems feel free to talk to the staff at the admin table." 
-		"flags"		"" 
-	} 
-	"8" 
-	{ 
-		"type"		"S" 
-		"text"		"{ORANGE} Aim for the admins. They like getting shot. Really!" 
+		"text"		"Aim for the admins. They like getting shot. Really!" 
 		"flags"		"" 
 	} 
 } 
