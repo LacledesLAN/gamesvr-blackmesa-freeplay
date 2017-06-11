@@ -8,13 +8,13 @@ ENV IMAGE_NAME="gamesvr-blackmesa-freeplay:linux"
 
 HEALTHCHECK NONE
 
-USER root
+# UPDATE USERNAME
+RUN usermod -l BLACKMESAFreeplay BLACKMESA
+
+USER BLACKMESAFreeplay
 
 COPY ./dist /app/bin/
 
 COPY ./dist.linux /app/bin/bms/
 
-# CLEAN UP
-RUN usermod -l BLACKMESA.Freeplay BLACKMESA
-
-USER BLACKMESA.Freeplay
+WORKDIR /app/bin/
