@@ -1,6 +1,6 @@
 # escape=`
 
-FROM lacledeslan/gamesvr-blackmesa:linux
+FROM lacledeslan/gamesvr-srcds-blackmesa:linux
 
 LABEL maintainer "Laclede's LAN <contact@lacledeslan.com>"
 
