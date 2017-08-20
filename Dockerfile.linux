@@ -1,20 +1,20 @@
 # escape=`
 
-FROM lacledeslan/gamesvr-srcds-blackmesa:linux
+FROM lacledeslan/gamesvr-blackmesa
 
 LABEL maintainer "Laclede's LAN <contact@lacledeslan.com>"
 
-ENV IMAGE_NAME="gamesvr-blackmesa-freeplay:linux"
+ENV IMAGE="gamesvr-blackmesa-freeplay"
 
 HEALTHCHECK NONE
+
+COPY ./dist /app/bms/
+
+COPY ./dist.linux /app/bms/
 
 # UPDATE USERNAME
 RUN usermod -l BLACKMESAFreeplay BLACKMESA
 
 USER BLACKMESAFreeplay
 
-COPY ./dist /app/bin/
-
-COPY ./dist.linux /app/bin/bms/
-
-WORKDIR /app/bin/
+WORKDIR /app/
