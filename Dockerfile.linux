@@ -13,8 +13,8 @@ COPY ./dist /app/bms/
 COPY ./dist.linux /app/bms/
 
 # UPDATE USERNAME
-RUN usermod -l BLACKMESAFreeplay BLACKMESA
+RUN usermod -l BlackMesaFreeplay BlackMesa
 
-USER BLACKMESAFreeplay
+USER BlackMesaFreeplay
 
 WORKDIR /app/
