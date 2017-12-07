@@ -1,13 +1,21 @@
-# gameserver-blackmesa-freeplay
-Docker image for freeplay [Black Mesa](http://www.blackmesasource.com/) servers.
+# Laclede's LAN Black Mesa Freeplay Dedicated Server in Docker
 
-# Linux Container
-[![](https://images.microbadger.com/badges/image/lacledeslan/gamesvr-srcds-blackmesa-freeplay:linux.svg)](https://microbadger.com/images/lacledeslan/gamesvr-srcds-blackmesa-freeplay:linux "Get your own image badge on microbadger.com")
+## Linux
+[![](https://images.microbadger.com/badges/version/lacledeslan/gamesvr-blackmesa-freeplay.svg)](https://microbadger.com/images/lacledeslan/gamesvr-blackmesa-freeplay "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/lacledeslan/gamesvr-blackmesa-freeplay.svg)](https://microbadger.com/images/lacledeslan/gamesvr-blackmesa-freeplay "Get your own image badge on microbadger.com")
+
+
+**Download**
 ```
-docker pull lacledeslan/gamesvr-srcds-blackmesa-freeplay:linux
+docker pull lacledeslan/gamesvr-blackmesa-freeplay;
 ```
 
-# Build Triggers
-Automated builds of this image can be triggered by the following sources:
-* [Commits on GitHub](https://github.com/LacledesLAN/gamesvr-srcds-blackmesa-freeplay)
-* [Upstream build of lacledeslan/gamesvr-srcds-blackmesa](https://hub.docker.com/r/lacledeslan/gamesvr-srcds-blackmesa/)
+**Run Interactive Server**
+```
+docker pull lacledeslan/gamesvr-blackmesa-freeplay ./srcds_run -game bms +map gasworks -maxplayers 8 +sv_lan 1;
+```
+
+**Run Self Tests**
+```
+docker run -it --rm lacledeslan/gamesvr-blackmesa-freeplay ./ll-tests/gamesvr-blackmesa-freeplay.sh;
+```
