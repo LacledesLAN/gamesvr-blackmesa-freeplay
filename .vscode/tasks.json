@@ -6,14 +6,15 @@
         {
             "label": "Build",
             "type": "shell",
-            "command": "docker build . -f Dockerfile.linux -t ll/gamesvr-blackmesa-freeplay --no-cache --build-arg BUILDNODE=$env:computername;",
+            "command": "docker pull lacledeslan/gamesvr-blackmesa; docker build . -f Dockerfile.linux -t ll/gamesvr-blackmesa-freeplay --no-cache --build-arg BUILDNODE=$env:computername;",
+            "dependsOn": "download-sub-modules",
             "group": "build",
             "identifier": "build-image",
             "problemMatcher": [],
             "promptOnClose": true
         },
         {
-            "label": "Build & Execute Tests",
+            "label": "Build & Execute Self Tests",
             "type": "shell",
             "command": "docker run -it --rm ll/gamesvr-blackmesa-freeplay ./ll-tests/gamesvr-blackmesa-freeplay.sh;",
             "dependsOn": "build-image",
@@ -27,7 +28,7 @@
         {
             "label": "Build & Run Interactive Server",
             "type": "shell",
-            "command": "docker run -it --net=host ll/gamesvr-blackmesa-freeplay ./srcds_run -game bms +map gasworks -maxplayers 8 +sv_lan 1;",
+            "command": "docker run -it --net=host ll/gamesvr-blackmesa-freeplay ./srcds_run -game bms +map gasworks -maxplayers 8 +sv_lan 1 +usercon +rcon_password \"test123\";",
             "dependsOn": "build-image",
             "group": "build",
             "problemMatcher": [],
@@ -43,16 +44,17 @@
             "promptOnClose": true
         },
         {
-            "label": "Pull parent image",
+            "label": "Download git submodules",
             "type": "shell",
-            "command": "docker pull lacledeslan/gamesvr-blackmesa;",
+            "command": "git submodule update --recursive;",
+            "identifier": "download-sub-modules",
             "problemMatcher": [],
             "promptOnClose": true
         },
         {
-            "label": "Update git sub-modules",
+            "label": "Update git submodules",
             "type": "shell",
-            "command": "git submodule update --recursive; git submodule sync;",
+            "command": "git submodule foreach git pull origin master;",
             "problemMatcher": [],
             "promptOnClose": true
         }
