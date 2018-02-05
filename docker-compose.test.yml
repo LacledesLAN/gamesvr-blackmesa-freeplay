@@ -5,4 +5,4 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile.linux
-      command: /app/ll-tests/gamesvr-blackmesa-freeplay.sh
+    command: /app/ll-tests/gamesvr-blackmesa-freeplay.sh
