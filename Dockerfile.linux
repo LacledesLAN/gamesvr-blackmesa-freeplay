@@ -13,30 +13,25 @@ LABEL maintainer="Laclede's LAN <contact @lacledeslan.com>" `
       org.label-schema.description="Laclede's LAN Black Mesa Freeplay Dedicated Server" `
       org.label-schema.vcs-url="https://github.com/LacledesLAN/gamesvr-blackmesa-freeplay"
 
-COPY ./sourcemod.linux /app/bms/
-
-COPY ./sourcemod-configs /app/bms/
-
-COPY ./dist /app/bms/
-
-COPY ./ll-tests /app/ll-tests
-
-RUN chmod +rx /app/ll-tests/*.sh &&`
-    chmod +rwx /app/ll-tests &&`
-    chown BlackMesa:root -R /app/ll-tests;
-
 # UPDATE USERNAME & ensure permissions
 RUN usermod -l BlackMesaFreeplay BlackMesa &&`
-    find /app -type d -exec chmod 774 {} + &&`
-    chmod +x /app/ll-tests/*.sh &&`
     mkdir -p /app/bms/logs &&`
-    echo "Permissions hacks until 17.09+ makes it into Docker Cloud" &&`
-        chmod -R 774 /app/bms/addons &&`
-        chmod -R 774 /app/bms/cfg &&`
-        chmod -R 774 /app/bms/logs;
+    chmod -R 774 /app/bms/logs;
+
+COPY --chown=BlackMesaFreeplay:root ./sourcemod.linux /app/bms/
+COPY --chown=BlackMesaFreeplay:root ./sourcemod-configs /app/bms/
+COPY --chown=BlackMesaFreeplay:root ./dist /app/bms/
+COPY --chown=BlackMesaFreeplay:root ./ll-tests /app/ll-tests
+
+RUN chmod +x /app/ll-tests/*.sh &&`
+    chmod -R 774 /app/bms/addons &&`
+    chmod -R 774 /app/bms/cfg &&`
+    chmod -R 774 /app/bms/logs;
 
 USER BlackMesaFreeplay
 
 WORKDIR /app/
+
+CMD ["/bin/bash"]
 
 ONBUILD USER root
