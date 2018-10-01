@@ -1,5 +1,3 @@
-# Laclede's LAN Black Mesa Freeplay Dedicated Server in Docker
-
 ![thumb-blackmesa-freeplay](https://raw.githubusercontent.com/LacledesLAN/gamesvr-blackmesa-freeplay/master/.misc/thumb-blackmesa-freeplay.png "thumb-blackmesa-freeplay")
 
 This repository is maintained by [Laclede's LAN](https://lacledeslan.com). Its contents are heavily tailored and tweaked for use at our charity LAN-Parties. For third-parties we recommend using this repo only as a reference example and then building your own using [gamesvr-blackmesa](https://github.com/LacledesLAN/gamesvr-blackmesa) as the base image for your customized server.
