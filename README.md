@@ -21,11 +21,21 @@ The image includes a test script that can be used to verify its contents. No cha
 docker run -it --rm lacledeslan/gamesvr-blackmesa-freeplay ./ll-tests/gamesvr-blackmesa-freeplay.sh;
 ```
 
-### Run Interactive Server
+### Run Deathmatch Server
 
 ```shell
 docker run --net=host -it lacledeslan/gamesvr-blackmesa-freeplay ./srcds_run -game bms +map gasworks -maxplayers 8 +sv_lan 1;
 ```
+
+### Run Team Deathmatch Server
+
+```shell
+docker run --net=host -it lacledeslan/gamesvr-blackmesa-freeplay ./srcds_run -game bms +map gasworks -maxplayers 8 +sv_lan 1;
+```
+
+### Available Maps
+
+TODO:
 
 ## Getting Started with Game Servers in Docker
 
