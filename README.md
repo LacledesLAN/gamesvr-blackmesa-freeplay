@@ -24,13 +24,13 @@ docker run -it --rm lacledeslan/gamesvr-blackmesa-freeplay ./ll-tests/gamesvr-bl
 ### Run Deathmatch Server
 
 ```shell
-docker run --net=host -it lacledeslan/gamesvr-blackmesa-freeplay ./srcds_run -game bms +map gasworks -maxplayers 8 +sv_lan 1;
+docker run --net=host -it lacledeslan/gamesvr-blackmesa-freeplay ./srcds_run -game bms +map gasworks -maxplayers 16 +sv_password aPassword +sv_lan 1;
 ```
 
 ### Run Team Deathmatch Server
 
 ```shell
-docker run --net=host -it lacledeslan/gamesvr-blackmesa-freeplay ./srcds_run -game bms +map gasworks -maxplayers 8 +sv_lan 1;
+docker run --net=host -it lacledeslan/gamesvr-blackmesa-freeplay ./srcds_run -game bms +map gasworks -maxplayers 16 +mp_teamplay 1 +sv_password aPassword +sv_lan 1;
 ```
 
 ### Available Maps
