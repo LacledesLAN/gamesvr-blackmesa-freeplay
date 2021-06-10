@@ -33,10 +33,6 @@ docker run --net=host -it lacledeslan/gamesvr-blackmesa-freeplay ./srcds_run -ga
 docker run --net=host -it lacledeslan/gamesvr-blackmesa-freeplay ./srcds_run -game bms +map gasworks -maxplayers 16 +mp_teamplay 1 +sv_password aPassword +sv_lan 1;
 ```
 
-### Available Maps
-
-TODO:
-
 ## Getting Started with Game Servers in Docker
 
 [Docker](https://docs.docker.com/) is an open-source project that bundles applications into lightweight, portable, self-sufficient containers. For a crash course on running Dockerized game servers check out [Using Docker for Game Servers](https://github.com/LacledesLAN/README.1ST/blob/master/GameServers/DockerAndGameServers.md). For tips, tricks, and recommended tools for working with Laclede's LAN Dockerized game server repos see the guide for [Working with our Game Server Repos](https://github.com/LacledesLAN/README.1ST/blob/master/GameServers/WorkingWithOurRepos.md). You can also browse all of our other Dockerized game servers: [Laclede's LAN Game Servers Directory](https://github.com/LacledesLAN/README.1ST/tree/master/GameServers).
