@@ -3,9 +3,9 @@
 This repository is maintained by [Laclede's LAN](https://lacledeslan.com). Its contents are heavily tailored and tweaked for use at our charity LAN-Parties. For third-parties we recommend using this repo only as a reference example and then building your own using [gamesvr-blackmesa](https://github.com/LacledesLAN/gamesvr-blackmesa) as the base image for your customized server.
 
 ## Linux
+
 [![](https://images.microbadger.com/badges/version/lacledeslan/gamesvr-blackmesa-freeplay.svg)](https://microbadger.com/images/lacledeslan/gamesvr-blackmesa-freeplay "Get your own version badge on microbadger.com")
 [![](https://images.microbadger.com/badges/image/lacledeslan/gamesvr-blackmesa-freeplay.svg)](https://microbadger.com/images/lacledeslan/gamesvr-blackmesa-freeplay "Get your own image badge on microbadger.com")
-
 
 ### Download
 
@@ -24,7 +24,7 @@ docker run -it --rm lacledeslan/gamesvr-blackmesa-freeplay ./ll-tests/gamesvr-bl
 ### Run Interactive Server
 
 ```shell
-docker pull lacledeslan/gamesvr-blackmesa-freeplay ./srcds_run -game bms +map gasworks -maxplayers 8 +sv_lan 1;
+docker run --net=host -it lacledeslan/gamesvr-blackmesa-freeplay ./srcds_run -game bms +map gasworks -maxplayers 8 +sv_lan 1;
 ```
 
 ## Getting Started with Game Servers in Docker
