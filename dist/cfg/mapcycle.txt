@@ -1,6 +1,12 @@
-dm_bounce
+dm_boom
+dm_chopper
 dm_gasworks
-dm_lambdabunker
-dm_stalkyard
+dm_power
+dm_stack
 dm_subtransit
-dm_undertow
+dm_bounce
+dm_crossfire
+dm_lambdabunker
+dm_rail
+dm_stalkyard
+dm_undertow.bsp
